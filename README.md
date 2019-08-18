@@ -21,7 +21,9 @@ In the case of Dobble, each series (the  _card_) is composed of 8 elements (the 
 
 ## The source code
 
-This project hosts a small JavaScript function that can be used to generate the series, or rather the cards. Obviously, each number contained in the various series has the task of representing a unique  _shape_ among those present on our cards: the number 1 for the  _heart_, the number 2 for the  _tree_, and so on. For the sake of simplicity, we won’t make the numbers-to-shapes mapping in this post, being it a rather trivial task.
+This project hosts a small JavaScript script containing a `dobble()` function, which can be used to generate the series, or rather the cards. The function will generate the maximum number of series (cards) with a given **N** number of elements: however, the algorithm will only work if **N** has a value of any prime number +1. It could be 8 (as in _Dobble_) or also 3, 4, 6, 12, 14, 18, 20, and so on. If an invalid **N** value is used, the function will show a warning - and the `outputTests()` testing function will have some failures.
+
+It goes without saying that each number contained in the various series is meant to represent a unique shape among those present on our cards: the number 1 for the _heart_, the number 2 for the _tree_, and so on. For the sake of simplicity, we won't make the numbers-to-shapes mapping in this post, being it a rather trivial task.
 
 To try this function and/or change its values to generate different series, check out  [this JSFiddle](https://jsfiddle.net/Darkseal/9uyc8rtj/).
 
@@ -33,7 +35,8 @@ The second cycle builds all the remaining series by placing the elements number 
 
 ![Cycle 2](https://www.ryadel.com/wp-content/uploads/2019/08/dobble-game-spot-it-algorithm-function-02.jpg?ssl=1)
 
-By looking at the above processes, we can easily understand how the maximum  number of different series that this function can produce is equal to  **N + (N-1) * (N-1)**. In the case of  **Dobble**, where  **N**  is equal to 8, it means that we can have up to a maximum of  **8 + (8-1) * (8-1) = 57**  different cards: that’s 2 more than the number of cards contained in the Italian edition! If the shapes on each card were 10, we could have up to 91; if they were 12, up to 133; and so on.
+By looking at the above processes, we can easily understand how the maximum  number of different series that this function can produce is equal to  **N + (N-1) * (N-1)**. In the case of  **Dobble**, where  **N**  is equal to 8, it means that we can have up to a maximum of  **8 + (8-1) * (8-1) = 57**  different cards: that’s 2 more than the number of cards contained in the Italian edition! If the shapes on each card were 10, we could have up to 91; if they were 12, up to 133; and so on. Just remember that **N** must be a prime number +1, otherwise you'll end up with a certain amount of invalid series (that will be shown by the testing function ouput).
+
 
 ## Conclusion
 
