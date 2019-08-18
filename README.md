@@ -35,6 +35,8 @@ The second cycle builds all the remaining series by placing the elements number 
 
 ![Cycle 2](https://www.ryadel.com/wp-content/uploads/2019/08/dobble-game-spot-it-algorithm-function-02.jpg?ssl=1)
 
+Also, whenever the number in the first position changes, the vertical progression path is incrementally shifted to the right of the matrix starting from the number in position 3, so that each subsequent series will only “intersect” each vertical column of the matrix once (and only once).
+
 By looking at the above processes, we can easily understand how the maximum  number of different series that this function can produce is equal to  **N + (N-1) * (N-1)**. In the case of  **Dobble**, where  **N**  is equal to 8, it means that we can have up to a maximum of  **8 + (8-1) * (8-1) = 57**  different cards: that’s 2 more than the number of cards contained in the Italian edition! If the shapes on each card were 10, we could have up to 91; if they were 12, up to 133; and so on. Just remember that **N** must be a prime number +1, otherwise you'll end up with a certain amount of invalid series (that will be shown by the testing function ouput).
 
 
