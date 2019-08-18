@@ -25,7 +25,7 @@ function dobble() {
 	document.write("<pre>ERROR: N value ("+N+") is not a prime number +1:"); 
 	document.write(" some tests will fail.</pre>");
   }
-
+  
   // Generate series from #01 to #N
   for (i=0; i <= N-1; i++)  {
     var s = [];
@@ -57,19 +57,11 @@ function dobble() {
   outputTest(sTot, 1000);
 }
   
-function outputSeries(sTot) {
-  var cnt = 0;
-  document.write("<div>Printing "+ sTot.length +" series of "+ sTot[0].length +" elements each.</div>");
-  document.write("<pre>");
-  for (var i in sTot) {
-    cnt++;
-    var sLog = "#" + pad(cnt,2) + ":";
-    for (var i2 in sTot[i]) {
-      sLog += " " + pad(sTot[i][i2], 2);
-    } 
-    document.write(sLog + "\n");
+function isPrime(num) {
+  for(var i = 2; i < num; i++) {
+    if(num % i === 0) return false;
   }
-  document.write("</pre>");
+  return num > 1;
 }
 
 function pad(n, width, z) {
@@ -78,11 +70,20 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function isPrime(num) {
-  for(var i = 2; i < num; i++) {
-    if(num % i === 0) return false;
+function outputSeries(sTot) {
+  var nPad = sTot.length.toString().length;
+  var cnt = 0;
+  document.write("<div>Printing "+ sTot.length +" series of "+ sTot[0].length +" elements each.</div>");
+  document.write("<pre>");
+  for (var i in sTot) {
+    cnt++;
+    var sLog = "#" + pad(cnt,nPad) + ":";
+    for (var i2 in sTot[i]) {
+      sLog += " " + pad(sTot[i][i2], nPad);
+    } 
+    document.write(sLog + "\n");
   }
-  return num > 1;
+  document.write("</pre>");
 }
 
 // test function
