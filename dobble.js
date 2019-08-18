@@ -22,7 +22,8 @@ function dobble() {
   
   // check if N is valid (it must be a prime number +1)
   if (!isPrime(N-1)) {
-    document.write("<pre>ERROR: N value ("+N+") is invalid: it must be a prime number +1.</pre>");
+	document.write("<pre>ERROR: N value ("+N+") is not a prime number +1:"); 
+	document.write(" some tests will fail.</pre>");
   }
 
   // Generate series from #01 to #N
