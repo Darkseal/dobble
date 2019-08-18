@@ -1,5 +1,5 @@
 
-# dobble
+# dobble - a Dobble (Spot it!) JavaScript function
 A JavaScript function to generate combinatorial geometric series for games such as Dobble (Spot it!) and to better understand the math logic behind them
 
 ## Introduction
@@ -41,3 +41,8 @@ By looking at the above processes, we can easily understand how the maximum  num
 ## Conclusion
 
 That’s about it: I hope that this article could feed the curiosity of those interested about the maths behind this beautiful game.
+
+## References
+
+- [The original article on Ryadel.com](https://www.ryadel.com/en/dobble-spot-it-algorithm-math-function-javascript/)
+- [Dobble (Spot it!) on BoardGameGeek](https://boardgamegeek.com/boardgame/63268/spot-it)
