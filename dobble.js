@@ -15,7 +15,6 @@
 // -----------------------------------------------------------------------------
 // 
 function dobble() {
-
   var N = 8;     // number of symbols on each card
   var nC = 0;    // progressive number of cards
   var sTot = []; // array of series (cards)
